@@ -1,0 +1,190 @@
+{% extends 'layoutAfterLogin.twig' %}
+{% block body %}
+
+
+	<div class="md:w-[calc(100%-13rem)] w-full min-h-[80dvh] md:ml-[13rem] flex flex-col">
+
+
+		<div class="p-6 space-y-6 mb-1">
+
+			<div>
+				<h1 class="font-bold text-2xl ml-2">INCIDENT LISTINGS</h1>
+			</div>
+			<div class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg border-2 border-base-200 transition duration-300">
+
+				<div class="flex justify-between">
+					<div class="flex-col space-y-10 mb-4 ml-2 h-full">
+
+						<div>
+							<h1 class="fa-solid font-bold text-xl mb-2">Landslide</h1>
+							<p>Chamba Road, Pauri Garwhal, Uttrakhand</p>
+						</div>
+					</div>
+
+					<div class="flex-col h-full space-y-8 mr-10">
+
+						<div class="flex space-x-4 mt-1">
+
+							<div>
+								<span class="bg-red-200 text-red-800 text-sm font-medium px-3 py-2.5 rounded-full">New Request : 0</span>
+							</div>
+
+						</div>
+
+						<div>
+							<a href="/incidentHandling">
+								<button class="view-agency-button">
+									View
+								</button>
+							</a>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="p-6 space-y-6 mb-2">
+
+
+			<div class="flex space-x-16">
+				<div class="bg-base-200 rounded-xl shadow p-6 pb-0 hover:shadow-lg border-2 border-base-200 transition duration-300 w-3/4">
+
+					<div class="mb-4">
+						<h1 class="font-bold">Your Resources</h1>
+					</div>
+
+					<div class="mb-4">
+						<input type="text" class="input input-bordered h-5 py-4 pl-1 w-50 mr-5 -ml-1" placeholder="Type of Resource"/>
+					</div>
+
+
+					<div class="relative overflow-x-auto ">
+						<table class="w-full text-sm text-left ">
+							<thead class="text-xs text-black uppercase ">
+								<tr>
+									<th scope="col" class="px-1 py-3">
+										RESOURCE
+									</th>
+									<th scope="col" class="px-6 py-3">
+										AVAILABLE
+									</th>
+									<th scope="col" class="px-6 py-3">
+										IN USE
+									</th>
+									<th scope="col" class="px-6 py-3">
+										LEFT
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for key, value in user.resources %}
+									<tr class="text-xs text-black uppercase">
+										<th scope="row" class="px-1 py-4 font-medium ">
+											{{ key }}
+										</th>
+										<td class="px-6 py-4">
+											{{ value }}
+										</td>
+										<td class="px-6 py-4">
+											0
+										</td>
+										<td class="px-6 py-4">
+											{{ value }}
+										</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div>
+					<div
+						class="max-w-sm w-full bg-gray rounded-lg shadow ">
+						<!-- Line Chart -->
+						<div class="py-6" id="pie-chart"></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<script>
+		// ApexCharts options and config
+window.addEventListener("load", function () {
+const getChartOptions = () => {
+return {
+series: [
+62.5, 25, 12.5
+],
+colors: [
+"#1C64F2", "#16BDCA", "#9061F9"
+],
+chart: {
+height: 420,
+width: "100%",
+type: "pie"
+},
+stroke: {
+colors: ["white"],
+lineCap: ""
+},
+plotOptions: {
+pie: {
+labels: {
+show: true
+},
+size: "100%",
+dataLabels: {
+offset: -25
+}
+}
+},
+labels: [
+"Man Power", "Ambulance", "Rescue Vehicles"
+],
+dataLabels: {
+enabled: true,
+style: {
+fontFamily: "Inter, sans-serif"
+}
+},
+legend: {
+position: "bottom",
+fontFamily: "Inter, sans-serif"
+},
+yaxis: {
+labels: {
+formatter: function (value) {
+return value + "%"
+}
+}
+},
+xaxis: {
+labels: {
+formatter: function (value) {
+return value + "%"
+}
+},
+axisTicks: {
+show: false
+},
+axisBorder: {
+show: false
+}
+}
+}
+}
+
+if (document.getElementById("pie-chart") && typeof ApexCharts !== 'undefined') {
+const chart = new ApexCharts(document.getElementById("pie-chart"), getChartOptions());
+chart.render();
+}
+});
+	</script>
+
+{% endblock %}</tbody></tbody>

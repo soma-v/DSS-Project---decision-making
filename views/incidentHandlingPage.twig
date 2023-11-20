@@ -1,0 +1,451 @@
+{% extends 'layoutAfterLogin.twig' %}
+{% block body %}
+
+	<div class="md:w-[calc(100%-13rem)] w-full min-h-[80dvh] md:ml-[13rem] flex flex-col">
+
+
+		<div class="p-6 space-y-6 mb-1">
+
+			<div class="bg-rose-100 rounded-xl shadow p-6 hover:shadow-lg border-2 border-base-200 transition duration-300">
+
+				<div class="flex justify-between">
+					<div class="flex-col space-y-10 mb-4 ml-2 h-full">
+
+						<div>
+							<h1 class="fa-solid font-bold text-xl mb-2">Landslide</h1>
+							<p>Chamba Road, Pauri Garwhal, Uttrakhand</p>
+						</div>
+						<div class="flex space-x-4">
+							<div>
+								<button class="view-agency-button">
+									View Images
+								</button>
+							</div>
+
+							<div>
+								<a href="/allAgencies">
+									<button class="view-agency-button">
+										Collaborate
+									</button>
+								</a>
+							</div>
+
+							<div>
+								<button class="view-agency-button">
+									Requests
+								</button>
+							</div>
+						</div>
+
+					</div>
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="p-6 space-y-6 mb-1">
+
+
+			<div class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg border-2 border-base-200 transition duration-300">
+				<h1 class="font-bold">Total Collaborated Rescue Agencies : 3</h1>
+			</div>
+
+		</div>
+
+		<div class="mt-1 p-6 space-y-6 mb-12">
+
+
+			<div class="flex space-x-16">
+
+				<div class="bg-base-200 rounded-xl shadow p-6 pr-1 hover:shadow-lg border-2 border-base-200 transition duration-300 w-full">
+					<div class="flex justify-between mb-16">
+						<div>
+							<h1 class="font-bold">Event Details</h1>
+						</div>
+						<div class="mt-1">
+							<h1 class="text-xs">Reported on : 18 Nov 2023 20:47</h1>
+							<h1 class="text-xs">Updated on : 18 Nov 2023 20:47</h1>
+						</div>
+					</div>
+
+
+					<div class="flex flex-wrap justify-between pr-6 mb-16">
+						<div class="flex space-x-4">
+							<div>
+								<svg width="17" height="21" viewbox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<rect x="0.5" y="0.5" width="15.06" height="20" rx="7.5" fill="url(#pattern0)" stroke="#DFE0EB"/>
+									<defs>
+										<pattern id="pattern0" patterncontentunits="objectBoundingBox" width="1" height="1">
+											<use xlink:href="#image0_78_383" transform="matrix(0.0130759 0 0 0.01 -0.153797 0)"/>
+										</pattern>
+										<image id="image0_78_383" width="100" height="100" xlink:href="data:image/png;base64,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"/>
+									</defs>
+								</svg>
+							</div>
+
+
+							<div>
+								<h1>Casualities : 10</h1>
+							</div>
+
+
+						</div>
+
+						<div class="flex space-x-4">
+							<div>
+								<svg width="17" height="21" viewbox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<rect x="0.5" y="0.5" width="15.06" height="20" rx="7.5" fill="url(#pattern0)" stroke="#DFE0EB"/>
+									<defs>
+										<pattern id="pattern0" patterncontentunits="objectBoundingBox" width="1" height="1">
+											<use xlink:href="#image0_78_383" transform="matrix(0.0130759 0 0 0.01 -0.153797 0)"/>
+										</pattern>
+										<image id="image0_78_383" width="100" height="100" xlink:href="data:image/png;base64,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"/>
+									</defs>
+								</svg>
+							</div>
+
+
+							<div>
+								<h1>Injuries : 20</h1>
+							</div>
+
+
+						</div>
+					</div>
+
+					<div class="flex items-center justify-center space-x-8 mb-14 pr-6">
+						<div class="flex space-x-4">
+
+							<div>
+								<h1>Severity</h1>
+							</div>
+
+
+						</div>
+
+						<div class="flex space-x-4">
+							<svg width="92" height="47" viewbox="0 0 92 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M91.332 45.666C91.332 33.5546 86.5208 21.9393 77.9568 13.3753C69.3927 4.81123 57.7774 9.25161e-07 45.666 1.0777e-08C33.5546 -9.03607e-07 21.9393 4.81122 13.3753 13.3753C4.81123 21.9393 1.89073e-06 33.5546 6.19593e-08 45.666H11.4165C11.4165 36.5825 15.0249 27.871 21.448 21.448C27.871 15.0249 36.5825 11.4165 45.666 11.4165C54.7496 11.4165 63.4611 15.0249 69.8841 21.448C76.3071 27.871 79.9155 36.5825 79.9155 45.666H91.332Z" fill="#BE123C"/>
+								<path d="M23.5491 5.71319C16.3936 9.6743 10.4332 15.4844 6.29076 22.5365C2.14829 29.5886 -0.0242304 37.6237 0.000203855 45.8024L11.4167 45.7683C11.3983 39.6343 13.0277 33.6079 16.1346 28.3189C19.2414 23.0298 23.7117 18.6722 29.0784 15.7014L23.5491 5.71319Z" fill="#FECDD3"/>
+								<path d="M68.499 6.11808C61.5742 2.12005 53.721 0.0103556 45.7249 3.80268e-05C37.7289 -0.0102796 29.8703 2.07914 22.9351 6.05929L28.6179 15.961C33.8192 12.9759 39.7132 11.4088 45.7102 11.4165C51.7073 11.4243 57.5972 13.0065 62.7908 16.0051L68.499 6.11808Z" fill="#FB7185"/>
+								<path d="M46.537 6L48.8714 44.3933H44.2026L46.537 6Z" fill="#4E3138" fill-opacity="0.83"/>
+								<path d="M49.074 43.5476C49.074 44.9488 47.9381 46.0846 46.537 46.0846C45.1359 46.0846 44 44.9488 44 43.5476C44 42.1465 45.1359 41.0106 46.537 41.0106C47.9381 41.0106 49.074 42.1465 49.074 43.5476Z" fill="#4E3138" fill-opacity="0.83"/>
+							</svg>
+
+						</div>
+					</div>
+
+					<div class="flex justify-center items-center space-x-4 pr-6">
+						<div>
+							<button class="h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-full focus:shadow-outline hover:bg-indigo-800">
+								Description
+							</button>
+
+						</div>
+
+						<div>
+							<button class="h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-full focus:shadow-outline hover:bg-indigo-800">
+								Update
+							</button>
+
+						</div>
+					</div>
+
+				</div>
+
+				<div class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg border-2 border-base-200 transition duration-300 w-full">
+
+					<div class="mb-4">
+						<h1 class="font-bold">Your Resources in Use : 20</h1>
+					</div>
+
+					<div class="mb-4">
+						<input type="text" class="input input-bordered h-5 py-4 pl-1 w-50 mr-5 -ml-1" placeholder="  Filter Resource"/>
+					</div>
+
+
+					<div class="relative overflow-x-auto ">
+						<table class="w-full text-sm text-left ">
+							<thead class="text-xs text-black uppercase ">
+								<tr>
+									<th scope="col" class="px-1 py-3">
+										RESOURCE
+									</th>
+									<th scope="col" class="px-6 py-3">
+										IN USE
+									</th>
+									<th scope="col" class="px-6 py-3">
+										LEFT
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="text-xs text-black uppercase  ">
+									<th scope="row" class="px-1 py-4 font-medium ">
+										Man Power
+									</th>
+									<td class="px-6 py-4">
+										10
+									</td>
+									<td class="px-6 py-4">
+										15
+									</td>
+								</tr>
+								<tr class="text-xs text-black uppercase ">
+									<th scope="row" class="px-1 py-4 font-medium ">
+										Ambulance
+									</th>
+									<td class="px-6 py-4">
+										5
+									</td>
+									<td class="px-6 py-4">
+										5
+									</td>
+								</tr>
+								<tr class="text-xs text-black uppercase  ">
+									<th scope="row" class="px-1 py-4 font-medium ">
+										Rescue Vehicles
+									</th>
+									<td class="px-6 py-4">
+										5
+									</td>
+									<td class="px-6 py-4">
+										0
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg border-2 border-base-200 transition duration-300 w-full">
+
+					<div class="mb-4">
+						<h1 class="font-bold">Total Resources in Work</h1>
+					</div>
+
+					<div class="mb-4">
+						<input type="text" class="input input-bordered h-5 py-4 pl-1 w-50 mr-5 -ml-1" placeholder=" Filter Resource"/>
+					</div>
+
+
+					<div class="relative overflow-x-auto ">
+						<table class="w-full text-sm text-left ">
+							<thead class="text-xs text-black uppercase ">
+								<tr>
+									<th scope="col" class="px-1 py-3">
+										RESOURCE
+									</th>
+									<th scope="col" class="px-6 py-3">
+										In Use
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="text-xs text-black uppercase ">
+									<th scope="row" class="px-1 py-4 font-medium ">
+										Man Power
+									</th>
+									<td class="px-6 py-4">
+										25
+									</td>
+
+								</tr>
+								<tr class="text-xs text-black uppercase  ">
+									<th scope="row" class="px-1 py-4 font-medium ">
+										Ambulance
+									</th>
+									<td class="px-6 py-4">
+										10
+									</td>
+								</tr>
+								<tr class="text-xs text-black uppercase ">
+									<th scope="row" class="px-1 py-4 font-medium ">
+										Rescue Vehicles
+									</th>
+									<td class="px-6 py-4">
+										5
+									</td>
+								</tr>
+
+								<tr class="text-xs text-black uppercase ">
+									<th scope="row" class="px-1 py-4 font-medium ">
+										JCB
+									</th>
+									<td class="px-6 py-4">
+										5
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="p-6 space-y-6 mb-1 flex space-x-32 items-stretch">
+			<div class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg border-2 border-base-200 transition duration-300 w-[51rem]">
+
+				<div class="mb-12">
+					<h1 class="font-bold">Collaborated Agencies</h1>
+				</div>
+
+				<div class="mb-4 flex">
+					<div class="flex space-x-4">
+						<input type="text" class="input input-bordered h-5 py-4 pl-1 w-40 mr-5 -ml-1" placeholder="  Filter Agency"/>
+					</div>
+
+					<div class="ml-5">
+						<input type="text" class="input input-bordered h-5 py-4 pl-1 w-40 mr-5 -ml-1" placeholder="  Filter Status"/>
+					</div>
+
+					<div class="ml-10">
+						<input type="text" class="input input-bordered h-5 py-4 pl-1 w-40 mr-5 -ml-1" placeholder="  Filter Resource"/>
+					</div>
+				</div>
+
+
+				<div class="relative overflow-x-auto mb-0">
+					<table class="w-full text-sm text-left ">
+						<thead class="text-xs text-black uppercase  ">
+							<tr>
+								<th scope="col" class="px-1 py-3">
+									Agency Name
+								</th>
+								<th scope="col" class="px-6 py-3">
+									Status
+								</th>
+								<th scope="col" class="px-6 py-3">
+									Type of Resource
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="text-xs text-black uppercase ">
+								<th scope="row" class="px-1 py-4 font-medium ">
+									You
+								</th>
+								<td class="px-6 py-4">
+									Reached
+								</td>
+								<td class="px-6 py-4">
+									Ambulance, Food Supply
+								</td>
+							</tr>
+							<tr class="text-xs text-black uppercase  ">
+								<th scope="row" class="px-1 py-4 font-medium ">
+									Agency B
+								</th>
+								<td class="px-6 py-4">
+									On the way
+								</td>
+								<td class="px-6 py-4">
+									JCB
+								</td>
+							</tr>
+							<tr class="text-xs text-black uppercase">
+								<th scope="row" class="px-1 py-4 font-medium ">
+									Agency C
+								</th>
+								<td class="px-6 py-4">
+									On the way
+								</td>
+								<td class="px-6 py-4">
+									Escape Vehicles
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+
+			<div>
+				<div
+					class="w-full bg-gray rounded-lg shadow -mt-6 -ml-2">
+					<!-- Line Chart -->
+					<div class="py-6" id="pie-chart"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script>
+		// ApexCharts options and config
+window.addEventListener("load", function () {
+const getChartOptions = () => {
+return {
+series: [
+62.5, 25, 12.5
+],
+colors: [
+"#1C64F2", "#16BDCA", "#9061F9"
+],
+chart: {
+height: 420,
+width: "100%",
+type: "pie"
+},
+stroke: {
+colors: ["white"],
+lineCap: ""
+},
+plotOptions: {
+pie: {
+labels: {
+show: true
+},
+size: "100%",
+dataLabels: {
+offset: -25
+}
+}
+},
+labels: [
+"You", "Agency B", "Agency C"
+],
+dataLabels: {
+enabled: true,
+style: {
+fontFamily: "Inter, sans-serif"
+}
+},
+legend: {
+position: "bottom",
+fontFamily: "Inter, sans-serif"
+},
+yaxis: {
+labels: {
+formatter: function (value) {
+return value + "%"
+}
+}
+},
+xaxis: {
+labels: {
+formatter: function (value) {
+return value + "%"
+}
+},
+axisTicks: {
+show: false
+},
+axisBorder: {
+show: false
+}
+}
+}
+}
+
+if (document.getElementById("pie-chart") && typeof ApexCharts !== 'undefined') {
+const chart = new ApexCharts(document.getElementById("pie-chart"), getChartOptions());
+chart.render();
+}
+});
+	</script>
+{% endblock %}

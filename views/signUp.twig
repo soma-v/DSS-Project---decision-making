@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+		<title>Register</title>
+		<link rel="stylesheet" href="/stylesheets/signInSignUp.css">
+
+
+		<script src="https://cdn.tailwindcss.com"></script>
+		<section class="bg">
+			<div class="content">
+				<div class="from-content">
+
+					<h1>Create an account</h1>
+
+					<div class="alert-message">
+						<h4>{{message}}</h4>
+					</div>
+
+					<div class="from">
+						<div class="from-list">
+
+							<form action="/signUp" method="POST">
+
+								<input id="name" type="text" name="name" placeholder="Name" data-text="Please enter a valid Name" required>
+							</div>
+
+							<div class="from-list">
+								<input id="email" type="text" placeholder="Email" name="email" data-text="Please enter a valid email address." required>
+							</div>
+
+							<div class="from-list">
+								<input id="location" type="text" placeholder="Location" name="location" data-text="Please enter a valid Location." required>
+							</div>
+
+							<div class="from-list">
+								<input id="type" type="text" placeholder="Type of Rescue Agency" name="type" data-text="Please enter a valid type." required>
+							</div>
+
+							<div class="flex space-x-4">
+								<div class="from-list">
+									<input id="resource-name1" type="text" placeholder="Resource 1" name="resource1" data-text="Please enter a valid name.">
+								</div>
+
+								<div class="from-list">
+									<input id="resource-no1" type="text" placeholder="Number of Resource 1" name="resourceNo1" data-text="Please enter a valid number.">
+								</div>
+							</div>
+
+
+							<div class="flex space-x-4">
+								<div class="from-list">
+									<input id="resource-name2" type="text" placeholder="Resource 2" name="resource2" data-text="Please enter a valid name.">
+								</div>
+
+								<div class="from-list">
+									<input id="resource-no2" type="text" placeholder="Number of Resource 2" name="resourceNo2" data-text="Please enter a valid number.">
+								</div>
+							</div>
+
+							<div class="flex space-x-4">
+								<div class="from-list">
+									<input id="resource-name3" type="text" placeholder="Resource 3" name="resource3" data-text="Please enter a valid name.">
+								</div>
+
+								<div class="from-list">
+									<input id="resource-no3" type="text" placeholder="Number of Resource 3" name="resourceNo3" data-text="Please enter a valid number.">
+								</div>
+							</div>
+
+							<div class="from-list">
+								<input id="password" type="password" name="password" placeholder="Password (6-20 characters)" data-text="The password must be between 6-20 characters long." autocomplete="off" required>
+							</div>
+
+							<br>
+							<div class="submit-btn">
+								<button id="register">Continue</button>
+							</div>
+
+						</form>
+						<p class="tip signup-tip">
+							<span>Already have an account?</span>
+							<a href="/signIn">Sign in</a>
+						</p>
+
+					</div>
+				</div>
+			</div>
+		</section>
+	</head>
+</html></head></html></body></html>

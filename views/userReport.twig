@@ -1,0 +1,84 @@
+{% extends 'layoutBeforeLogin.twig' %}
+{% block body %}
+
+	<div class="md:w-[calc(100%-13rem)] w-full min-h-[80dvh] md:ml-[13rem] flex flex-col">
+
+		<form method="POST" action="/getNearbyAgencies">
+			<div class="w-full flex  p-6">
+				<input type="text" class="input input-bordered w-50 mr-5" placeholder="Disaster Type" name="disaster"/>
+				<input type="text" class="input input-bordered w-50 mr-10" placeholder="Location" name="location"/>
+
+				<div class="pt-3 w-50 input input-bordered">
+					<label class="input-group-text font-bold mt-2" for="inputGroupFile">Camera</label>
+					<input type='file' id="inputGroupFile" style="display:none"/>
+				</div>
+
+
+			</div>
+			<button type="submit" class="search-button ml-6" style="background:red;">
+				REPORT
+			</button>
+		</form>
+
+		<div class="px-6 space-y-6 mb-12">
+			<div class="mt-16 pl-2">
+				<h1 class="font-bold text-xl">All rescue Agencies</h1>
+			</div>
+			{% for agency in agencies %}
+				{% if agency.name != user.name %}
+					<div class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg border-2 border-base-200 transition duration-300">
+
+						<div class="flex justify-between">
+							<div class="flex-col space-y-10 mb-4 ml-2 h-full">
+
+								<div>
+									<h1 class="fa-solid font-bold my-2">{{agency.name}}</h1>
+									<p>{{agency.location}}</p>
+								</div>
+
+								<div class="flex space-x-8">
+									<div>
+										<h2 class="font-medium">Experience :
+											{{agency.experience}}
+											Years</h2>
+									</div>
+									<div>
+										<h2 class="font-medium">Rating :
+											{{agency.rating}}
+										</h2>
+									</div>
+								</div>
+							</div>
+
+							<div class="flex-col h-full space-y-16 mr-10">
+
+								<div class="flex space-x-4">
+
+									{% for key, value in agency.resources %}
+										<div>
+											<span class="bg-green-200 text-green-800 text-sm font-medium px-2.5 py-2.5 rounded-full ">{{key}}
+												:
+												{{value}}</span>
+										</div>
+									{% endfor %}
+								</div>
+
+
+								<div class="flex justify-end">
+									<div>
+										<button class="view-agency-button">
+											View
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				{% endif %}
+			{% endfor %}
+
+
+		</div>
+	</div>
+{% endblock %}
